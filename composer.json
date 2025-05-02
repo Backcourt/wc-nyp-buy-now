@@ -1,0 +1,55 @@
+{
+    "name": "backcourt/wc-nyp-buy-now",
+    "description": "Name Your Price buy now button.",
+    "homepage": "https://github.com/backcourt/wc-nyp-buy-now",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "helgatheviking",
+            "email": "507025+helgatheviking@users.noreply.github.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/backcourt/wc-nyp-buy-now/issues",
+        "source": "https://github.com/backcourt/wc-nyp-buy-now"
+    },
+    "require": {
+        "afragen/git-updater-lite": "^1"
+    },
+    "require-dev": {
+        "wp-cli/i18n-command": "^2.6",
+        "woocommerce/woocommerce-sniffs": "^1.0"
+    },
+    "scripts": {
+        "makepot-audit": [
+            "wp --allow-root i18n make-pot . languages/wc-nyp-buy-now.pot --slug=wc-nyp-buy-now --exclude=\".github,.wordpress-org,build,deploy,node_modules,packages,vendor\" --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/backcourt/wc-nyp-buy-now/new\"}'"
+        ],
+        "makepot": [
+            "@makepot-audit --skip-audit"
+        ],
+        "phpcs": [
+            "phpcs . -s -p -n"
+        ],
+        "phpcs-pre-commit": [
+            "phpcs . -s -p -n"
+        ],
+        "phpcb": [
+            "phpcbf . "
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "scripts-description": {
+            "makepot": "Generate a .pot file for translation",
+            "makepot-audit": "Generate a .pot file for translation. Dry run.",
+            "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+            "phpcb": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
+        }
+    }
+}

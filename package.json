@@ -1,0 +1,29 @@
+{
+  "name": "wc-nyp-buy-now",
+  "version": "1.0.0",
+  "description": "Display a buy now button next to add to cart button for Name Your Price products to bypass price input.",
+  "main": "Gruntfile.js",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/backcourt/wc-nyp-buy-now.git"
+  },
+  "bugs": {
+    "url": "https://github.com/backcourt/wc-nyp-buy-now/issues"
+  },
+  "keywords": [
+    "donations",
+    "plugin",
+    "woocommerce"
+  ],
+  "author": "Backcourt Development",
+  "homepage": "https://github.com/backcourt/wc-nyp-buy-now#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.15.0"
+  },
+  "scripts": {
+    "makepot": "composer run-script makepot",
+    "release": "npm run makepot && npm run zip",
+    "zip": "wp-scripts plugin-zip"
+  }
+}
